@@ -81,7 +81,9 @@
 
 
 \section*{Pr"aambel}
-\addcontentsline{toc}{section}{Pr"aambel}
+\ifx\csname XeTeXrevision\endcsname
+    \addcontentsline{toc}{section}{Pr"aambel}
+\fi
 Das OpenLab schafft einen Rahmen f"ur Projekte, die praktisches,
 interkulturelles und kunsthandwerkliches Tun f"ordern und allen Menschen
 selbstbestimmte, selbsterm"achtigende Bildung erm"oglichen. Es unterst"utzt
