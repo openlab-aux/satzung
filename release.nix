@@ -27,7 +27,7 @@ with import <nixpkgs> {};
     installPhase = ''
       install -vD -m 0644 satzung.pdf "$out/satzung.pdf"
       mkdir -p "$out/nix-support"
-      echo "doc-pdf satzung $out/manual.pdf" \
+      echo "doc-pdf satzung $out/satzung.pdf" \
         > "$out/nix-support/hydra-build-products"
     '';
   };
