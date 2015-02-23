@@ -10,34 +10,34 @@
 \usepackage[a5paper]{geometry}
 \usepackage[ngerman]{babel}
 
-% Diese Pakete lassen sich nur mit XeLaTex oder LuaLaTex verwenden
+% XeLaTex/LuaLaTex only
 \usepackage{fontspec}
 \usepackage{xunicode}
-\defaultfontfeatures{Mapping=tex-text} % To support LaTeX quoting style
+\defaultfontfeatures{Mapping=tex-text} % to support LaTeX quoting style
 
-% Damit lässt sich die art von Aufzählungen ändern
+% to change itemization style
 \usepackage{paralist}
 
 \usepackage[hyphens]{url}
 
-% Generiert ein PDF-Inhaltsverzeichnis und klickbare Links
+% generates a PDF table of contents with clickable links
 \usepackage[hidelinks]{hyperref}
-\urlstyle{same} % Keine Monotype-Schriftart für URLs
+\urlstyle{same} % don't use monotype font for URLs
 
-% OpenLab Farben RGB
+% OpenLab RGB colors
 \usepackage{xcolor}
 \definecolor{olagrau}{HTML}{4d4d4d}
 \definecolor{olablau}{HTML}{0088aa}
 
-% OpenLab-Schriftarten (Müssen als Systemfonts vorhanden sein)
+% OpenLab fonts (have to be available as system fonts)
 \newfontfamily\PHead{Ubuntu}
 %\setmainfont{DejaWeb}
 \setmainfont{DejaVu Sans}
 
-% Zeilenabstand 1.5
+% set line spacing to 1.5
 \usepackage[onehalfspacing]{setspace}
 
-% Neudefinition der Schriften
+% redeclare fonts
 \setkomafont{chapter}{\linespread{0.9}\Huge\color{olablau}\PHead}
 \setkomafont{section}{\linespread{0.9}\LARGE\color{olagrau}\PHead}
 \setkomafont{subsection}{\linespread{0.9}\Large\color{olagrau}\PHead}
@@ -47,10 +47,10 @@
 
 \usepackage{pdfpages}
 
-% Schusterjungen und Hurenkinder vermeiden
+% avoid widows and orphans
 \usepackage[defaultlines=3,all]{nowidow}
 
-% Paragraphenzeichen vor der Nummerierung
+% prepend section signs to items
 \renewcommand*\thesection{\S~\arabic{section}}
 
 \begin{document}
