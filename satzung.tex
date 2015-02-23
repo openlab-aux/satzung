@@ -10,45 +10,47 @@
 \usepackage[a5paper]{geometry}
 \usepackage[ngerman]{babel}
 
-% XeLaTex/LuaLaTex only
-\usepackage{fontspec}
-\usepackage{xunicode}
-\defaultfontfeatures{Mapping=tex-text} % to support LaTeX quoting style
-
 % to change itemization style
 \usepackage{paralist}
 
 \usepackage[hyphens]{url}
-
-% generates a PDF table of contents with clickable links
-\usepackage[hidelinks]{hyperref}
-\urlstyle{same} % don't use monotype font for URLs
 
 % OpenLab RGB colors
 \usepackage{xcolor}
 \definecolor{olagrau}{HTML}{4d4d4d}
 \definecolor{olablau}{HTML}{0088aa}
 
-% OpenLab fonts (have to be available as system fonts)
-\newfontfamily\PHead{Ubuntu}
-%\setmainfont{DejaWeb}
-\setmainfont{DejaVu Sans}
-
 % set line spacing to 1.5
 \usepackage[onehalfspacing]{setspace}
 
-% redeclare fonts
-\setkomafont{chapter}{\linespread{0.9}\Huge\color{olablau}\PHead}
-\setkomafont{section}{\linespread{0.9}\LARGE\color{olagrau}\PHead}
-\setkomafont{subsection}{\linespread{0.9}\Large\color{olagrau}\PHead}
-\setkomafont{subsubsection}{\linespread{0.9}\large\color{olagrau}\PHead}
-\setkomafont{chapterentry}{\large\color{olagrau}\PHead}
-\setkomafont{pagenumber}{\small\color{olablau}}
-
 \usepackage{pdfpages}
 
-% avoid widows and orphans
-\usepackage[defaultlines=3,all]{nowidow}
+% XeLaTex/LuaLaTex only
+\ifx\csname XeTeXrevision\endcsname
+    \usepackage{fontspec}
+    \usepackage{xunicode}
+    \defaultfontfeatures{Mapping=tex-text} % to support LaTeX quoting style
+
+    % generates a PDF table of contents with clickable links
+    \usepackage[hidelinks]{hyperref}
+    \urlstyle{same} % don't use monotype font for URLs
+
+    % OpenLab fonts (have to be available as system fonts)
+    \newfontfamily\PHead{Ubuntu}
+    %\setmainfont{DejaWeb}
+    \setmainfont{DejaVu Sans}
+
+    % avoid widows and orphans
+    \usepackage[defaultlines=3,all]{nowidow}
+
+    % redeclare fonts
+    \setkomafont{chapter}{\linespread{0.9}\Huge\color{olablau}\PHead}
+    \setkomafont{section}{\linespread{0.9}\LARGE\color{olagrau}\PHead}
+    \setkomafont{subsection}{\linespread{0.9}\Large\color{olagrau}\PHead}
+    \setkomafont{subsubsection}{\linespread{0.9}\large\color{olagrau}\PHead}
+    \setkomafont{chapterentry}{\large\color{olagrau}\PHead}
+    \setkomafont{pagenumber}{\small\color{olablau}}
+\fi
 
 % prepend section signs to items
 \renewcommand*\thesection{\S~\arabic{section}}
